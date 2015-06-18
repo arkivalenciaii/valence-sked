@@ -12,4 +12,5 @@
 */
 
 Route::get('/', 'WelcomeController@index');
+Route::get('flash','TestController@flash');
 Route::get('dashboard', 'DashboardController@index');

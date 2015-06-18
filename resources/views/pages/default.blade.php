@@ -58,4 +58,5 @@
     </div>
 </div>
 @yield('content')
+@include('flash::message')
 @include('pages.footer')
