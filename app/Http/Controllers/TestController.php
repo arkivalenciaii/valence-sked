@@ -11,8 +11,7 @@ class TestController extends Controller
 {
     public function flash()
     {
-        $name = 'Arki';
-        flash()->overlay('HI!','Welcome to flash');
+        flash()->overlay('Hello Mameee pangooo :*','Welcome to flappy');
         return view('pages.flash')->with('name', $name);
     }
 }

@@ -11,6 +11,20 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', ['middleware' => 'auth', 'uses' => 'WelcomeController@set']);
+Route::get('messages', [
+    'middleware' => 'auth',
+    'uses' => 'MessagesController@index'
+]);
+Route::get('messages/{from}', [
+    'middleware' => 'auth',
+    'uses' => 'MessagesController@show'
+]);
 Route::get('flash','TestController@flash');
-Route::get('dashboard', 'DashboardController@index');
+Route::get('dashboard','DashboardController@index');
+Route::get('mamee/{name}', 'TestController@flash');
+//Route::get('login' 'AuthController@login');
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+]);
